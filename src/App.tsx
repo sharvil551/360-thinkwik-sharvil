@@ -3,7 +3,7 @@ import "./App.css";
 import { Home } from "./components/layout/Home";
 import { Routes, Route, Navigate } from "react-router";
 import { Leaves } from "./components/Leaves";
-import { LeavesSummary } from "./components/LeavesSummary";
+import { LeaveSummary } from "./components/LeaveSummary";
 import { Profile } from "./components/Profile";
 import { Login } from "./components/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -35,8 +35,8 @@ function App() {
             element={<ProtectedRoute element={<Leaves />} />}
           />
           <Route
-            path="/leaves-summary"
-            element={<ProtectedRoute element={<LeavesSummary />} />}
+            path="/leave-summary"
+            element={<ProtectedRoute element={<LeaveSummary />} />}
           />
           <Route
             path="/my-profile"

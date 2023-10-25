@@ -159,8 +159,8 @@ const Sidebar: React.FC<SidebarProps> = ({ open, sideBarWidth }) => {
 
             <ListItemButton
               component={Link}
-              to="/leaves-summary"
-              onClick={() => handleListItemClick("/leaves-summary")}
+              to="/leave-summary"
+              onClick={() => handleListItemClick("/leave-summary")}
               sx={{
                 minHeight: 48,
                 justifyContent: open ? "initial" : "center",
@@ -169,7 +169,7 @@ const Sidebar: React.FC<SidebarProps> = ({ open, sideBarWidth }) => {
                   backgroundColor: "transparent",
                 },
               }}
-              selected={location.pathname === "/leaves-summary"}
+              selected={location.pathname === "/leave-summary"}
             >
               <ListItemIcon
                 sx={{
@@ -177,7 +177,7 @@ const Sidebar: React.FC<SidebarProps> = ({ open, sideBarWidth }) => {
                   mr: open ? 3 : "auto",
                   justifyContent: "center",
                   color:
-                    location.pathname === "/leaves-summary"
+                    location.pathname === "/leave-summary"
                       ? "rgb(95, 158, 160)"
                       : "none",
                 }}
@@ -185,11 +185,11 @@ const Sidebar: React.FC<SidebarProps> = ({ open, sideBarWidth }) => {
                 <CalendarMonthIcon />
               </ListItemIcon>
               <ListItemText
-                primary="Leaves Summary"
+                primary="Leave Summary"
                 sx={{
                   opacity: open ? 1 : 0,
                   color:
-                    location.pathname === "/leaves-summary"
+                    location.pathname === "/leave-summary"
                       ? "rgb(95, 158, 160)"
                       : "none",
                 }}
