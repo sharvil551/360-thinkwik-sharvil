@@ -59,6 +59,7 @@ export const LeaveSummary = () => {
                 sx={{ width: "300px" }}
                 placeholder="Search Employee"
                 variant="outlined"
+                size="small"
               />
             </FormControl>
 
@@ -86,114 +87,121 @@ export const LeaveSummary = () => {
             </List>
           </div>
 
-          <div style={{ width: "100%", marginLeft: "16px" }}>
+          <div style={{ width: "100%" }}>
             <Stack
-              direction={{ xs: "column", sm: "row" }}
+              direction="column"
               spacing={{ xs: 1, sm: 2, md: 4 }}
               sx={{ justifyContent: "space-between" }}
+              mx={2}
             >
-              <div>
-                <Typography variant="h5">Sharvil Patel (TW066)</Typography>
-              </div>
+              <Stack direction="row" sx={{ justifyContent: "space-between",alignItems:'center' }}>
+                <Typography variant="h5" >Sharvil Patel (TW066)</Typography>
 
-              <Stack direction="row" spacing={2}>
-                <div style={{ width: "150px", maxWidth: "100%" }}>
-                  <FormControl fullWidth>
-                    <InputLabel id="demo-simple-select-label">Year</InputLabel>
-                    <Select
-                      labelId="demo-simple-select-label"
-                      defaultValue="2023"
-                      label="Year"
-                    >
-                      <MenuItem value="2023">2023</MenuItem>
-                    </Select>
-                  </FormControl>
-                </div>
+                <Stack direction="row" spacing={2} mx={2}>
+                  <div style={{ width: "150px", maxWidth: "100%" }}>
+                    <FormControl fullWidth>
+                      <InputLabel id="demo-simple-select-label">
+                        Year
+                      </InputLabel>
+                      <Select
+                        labelId="demo-simple-select-label"
+                        defaultValue="2023"
+                        label="Year"
+                        size="small"
+                      >
+                        <MenuItem value="2023">2023</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </div>
 
-                <div
-                  style={{
-                    width: "150px",
-                    maxWidth: "100%",
-                  }}
-                >
-                  <FormControl fullWidth>
-                    <InputLabel id="demo-simple-select-label">Month</InputLabel>
-                    <Select
-                      labelId="demo-simple-select-label"
-                      defaultValue="October"
-                      label="Month"
-                    >
-                      <MenuItem value="January">January</MenuItem>
-                      <MenuItem value="February">February</MenuItem>
-                      <MenuItem value="March">March</MenuItem>
-                      <MenuItem value="April">April</MenuItem>
-                      <MenuItem value="May">May</MenuItem>
-                      <MenuItem value="June">June</MenuItem>
-                      <MenuItem value="July">July</MenuItem>
-                      <MenuItem value="August">August</MenuItem>
-                      <MenuItem value="September">September</MenuItem>
-                      <MenuItem value="October">October</MenuItem>
-                      <MenuItem value="November">November</MenuItem>
-                      <MenuItem value="December">December</MenuItem>
-                    </Select>
-                  </FormControl>
-                </div>
+                  <div
+                    style={{
+                      width: "150px",
+                      maxWidth: "100%",
+                    }}
+                  >
+                    <FormControl fullWidth>
+                      <InputLabel id="demo-simple-select-label">
+                        Month
+                      </InputLabel>
+                      <Select
+                        labelId="demo-simple-select-label"
+                        defaultValue="October"
+                        label="Month"
+                        size="small"
+                      >
+                        <MenuItem value="January">January</MenuItem>
+                        <MenuItem value="February">February</MenuItem>
+                        <MenuItem value="March">March</MenuItem>
+                        <MenuItem value="April">April</MenuItem>
+                        <MenuItem value="May">May</MenuItem>
+                        <MenuItem value="June">June</MenuItem>
+                        <MenuItem value="July">July</MenuItem>
+                        <MenuItem value="August">August</MenuItem>
+                        <MenuItem value="September">September</MenuItem>
+                        <MenuItem value="October">October</MenuItem>
+                        <MenuItem value="November">November</MenuItem>
+                        <MenuItem value="December">December</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </div>
 
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Chip label="Current Month" variant="outlined" />
-                </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Chip label="Current Month" variant="outlined" />
+                  </div>
 
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Chip label="Previous Month" variant="outlined" />
-                </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Chip label="Previous Month" variant="outlined" />
+                  </div>
+                </Stack>
               </Stack>
+
+              {/* <Box> */}
+                <Grid container spacing={2} sx={{margin:'0 !important'}}>
+                  {leavesSection.map((p, index) => {
+                    return (
+                      <>
+                        <Grid item xs={3} key={index}>
+                          <Paper
+                            square={false}
+                            elevation={1}
+                            sx={{
+                              padding: "16px",
+                              background: p.backgroundColor,
+                            }}
+                          >
+                            <Typography variant="h6">{p.type}</Typography>
+                            <Typography variant="body1" mt={1}>
+                              Used: {p.used}
+                            </Typography>
+                            <Typography variant="body1">
+                              Available: {p.available}
+                            </Typography>
+                          </Paper>
+                        </Grid>
+                      </>
+                    );
+                  })}
+                </Grid>
+              {/* </Box> */}
+
+              <Typography variant="h6" mt={4} mb={2}>
+                Leaves taken
+              </Typography>
+              <TableComponent />
             </Stack>
-
-            <Box mt={2}>
-              <Grid container spacing={2}>
-                {leavesSection.map((p, index) => {
-                  return (
-                    <>
-                      <Grid item xs={3} key={index}>
-                        <Paper
-                          square={false}
-                          elevation={1}
-                          sx={{
-                            padding: "16px",
-                            background: p.backgroundColor,
-                          }}
-                        >
-                          <Typography variant="h6">{p.type}</Typography>
-                          <Typography variant="body1" mt={1}>
-                            Used: {p.used}
-                          </Typography>
-                          <Typography variant="body1">
-                            Available: {p.available}
-                          </Typography>
-                        </Paper>
-                      </Grid>
-                    </>
-                  );
-                })}
-              </Grid>
-            </Box>
-
-            <Typography variant="h6" mt={4} mb={2}>
-              Leaves taken
-            </Typography>
-            <TableComponent />
           </div>
         </Stack>
       </Box>

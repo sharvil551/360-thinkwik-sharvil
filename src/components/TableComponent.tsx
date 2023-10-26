@@ -78,7 +78,7 @@ export default function TableComponent() {
   };
 
   return (
-    <Paper sx={{ width: "100%", overflow: "hidden" }}>
+    <> <Paper sx={{ width: "100%", overflow: "hidden" }}>
       <TableContainer sx={{ maxHeight: 440 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
@@ -116,6 +116,7 @@ export default function TableComponent() {
           </TableBody>
         </Table>
       </TableContainer>
+       </Paper>
       <TablePagination
         rowsPerPageOptions={[10, 25, 100]}
         component="div"
@@ -125,6 +126,8 @@ export default function TableComponent() {
         onPageChange={handleChangePage}
         onRowsPerPageChange={handleChangeRowsPerPage}
       />
-    </Paper>
+      </>
+   
+   
   );
 }

@@ -12,10 +12,10 @@ export const Home = ({ children }: HomeProps): JSX.Element => {
   const handleMenuToggle = () => {
     setSidebarOpen((o) => !o);
   };
-  const sidebarWidth = 240; 
+  const sidebarWidth = 230; 
 
   const contentStyle = {
-    paddingLeft: isSidebarOpen ? `${sidebarWidth}px` : "35px",
+    paddingLeft: isSidebarOpen ? `${sidebarWidth}px` : "30px",
     transition:  "margin 0.3s ease-in-out", 
   };
 

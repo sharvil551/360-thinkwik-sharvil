@@ -105,6 +105,8 @@ export const Profile = () => {
                     <DatePicker
                       label="Date of Birth"
                       value={dayjs(Date.now())}
+                        slotProps={{ textField: { size: 'small' } }}
+
                     />
                   </LocalizationProvider>
                 </FormControl>
@@ -116,6 +118,8 @@ export const Profile = () => {
                     defaultCountry="IN"
                     label="Phone Number"
                     value={"+91 6354886802"}
+                    size="small"
+
                   />
                 </FormControl>
               </Grid>
@@ -133,6 +137,8 @@ export const Profile = () => {
                       label="Date of Joining"
                       value={dayjs(Date.now())}
                       disabled
+                        slotProps={{ textField: { size: 'small' } }}
+
                     />
                   </LocalizationProvider>
                 </FormControl>
@@ -144,6 +150,7 @@ export const Profile = () => {
                     label="Employee ID"
                     defaultValue="TW066"
                     disabled
+                    size="small"
                   />
                 </FormControl>
               </Grid>
@@ -159,6 +166,7 @@ export const Profile = () => {
                     defaultValue="Web Development"
                     label="Department"
                     disabled
+                    size="small"
                   >
                     <MenuItem value="Web Development">Web Development</MenuItem>
                   </Select>
@@ -175,6 +183,7 @@ export const Profile = () => {
                     defaultValue="Junior Software Engineer"
                     label="Department"
                     disabled
+                    size="small"
                   >
                     <MenuItem value="Junior Software Engineer">
                       Junior Software Engineer
@@ -193,6 +202,7 @@ export const Profile = () => {
                     defaultValue="Sulay Sumaria"
                     label="Reporting Manager"
                     disabled
+                    size="small"
                   >
                     <MenuItem value="Sulay Sumaria">Sulay Sumaria</MenuItem>
                   </Select>
@@ -215,6 +225,7 @@ export const Profile = () => {
                     defaultValue="Active"
                     label="Employee Status"
                     disabled
+                    size="small"
                   >
                     <MenuItem value="Active">Active</MenuItem>
                   </Select>
@@ -231,6 +242,7 @@ export const Profile = () => {
                     defaultValue="Employee"
                     label="Employee Role"
                     disabled
+                    size="small"
                   >
                     <MenuItem value="Employee">Employee</MenuItem>
                   </Select>
