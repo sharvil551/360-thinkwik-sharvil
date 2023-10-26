@@ -1,7 +1,9 @@
 import { useState } from "react";
 import Sidebar from "./Sidebar";
-import { Box } from "@mui/material";
+import { Box, CssBaseline } from "@mui/material";
 import Navbar from "./Navbar";
+import "../../assets/main.scss";
+
 type HomeProps = {
   children: JSX.Element | any;
 };
@@ -12,20 +14,61 @@ export const Home = ({ children }: HomeProps): JSX.Element => {
   const handleMenuToggle = () => {
     setSidebarOpen((o) => !o);
   };
-  const sidebarWidth = 230; 
+  const sidebarWidth = 230;
 
-  const contentStyle = {
-    paddingLeft: isSidebarOpen ? `${sidebarWidth}px` : "30px",
-    transition:  "margin 0.3s ease-in-out", 
-  };
+  // const contentStyle = {
+  //   paddingLeft: isSidebarOpen ? `${sidebarWidth}px` : "50px",
+  //   transition: "width 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms"
+  // };
 
   return (
     <>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      {/* <Box component="div">
         <Navbar onMenuToggle={handleMenuToggle} />
-         <Sidebar open={isSidebarOpen} sideBarWidth={sidebarWidth} />
-        <Box component="main" sx={{ flexGrow: 1, p: 4, ...contentStyle}} >
+        <Sidebar open={isSidebarOpen} sideBarWidth={sidebarWidth} />
+        <Box component="main" sx={{ flexGrow: 1, p: 3, ...contentStyle }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-end",
+              padding: "0px 8px",
+              minHeight: "64px",
+            }}
+          ></div>
+          
           {children}
+        </Box>
+      </Box> */}
+
+      <Box sx={{ display: "flex" }}>
+        <CssBaseline />
+        <Navbar onMenuToggle={handleMenuToggle} />
+        <Sidebar open={isSidebarOpen} sideBarWidth={sidebarWidth} />
+        <Box
+          component="main"
+          sx={{
+          flexGrow: 1,
+          p: 2,
+          marginLeft: isSidebarOpen ? '10px' : "0px",
+          transition: isSidebarOpen?"margin 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms ": "margin 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms"
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-end",
+              padding: "0px 8px",
+              minHeight: "64px",
+            }}
+          ></div>
+
+          {/* <Grid container >
+            <Grid item xs={12}> */}
+          {children}
+          {/* </Grid>
+          </Grid> */}
         </Box>
       </Box>
     </>

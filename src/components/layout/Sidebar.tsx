@@ -23,19 +23,23 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ open, sideBarWidth }) => {
   const openedMixin = (theme: Theme): CSSObject => ({
     width: sideBarWidth,
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
+    // transition: theme.transitions.create("width", {
+    //   easing: theme.transitions.easing.sharp,
+    //   duration: theme.transitions.duration.enteringScreen,
+    // }),
+    //  transition: "margin 3s",
+    //  transitionTimingFunction: "cubic-bezier(0.1, 0.7, 1.0, 0.1)",
     overflowX: "hidden",
     zIndex: 1000,
   });
 
   const closedMixin = (theme: Theme): CSSObject => ({
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
+    // transition: theme.transitions.create("width", {
+    //   easing: theme.transitions.easing.sharp,
+    //   duration: theme.transitions.duration.leavingScreen,
+    // }),
+    //  transition: "margin 3s",
+    // transitionTimingFunction: "cubic-bezier(0.1, 0.7, 1.0, 0.1)",
     overflowX: "hidden",
     width: `60px`,
     zIndex: 1000,

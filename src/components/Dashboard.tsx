@@ -37,7 +37,7 @@ export const Dashboard = () => {
   ];
   return (
     <>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      {/* <Box component="main" sx={{ flexGrow: 1, p: 3 }}> */}
         <Typography variant="h5">Welcome Sharvil Patel!</Typography>
         <Box>
           <Grid container spacing={2} mt={0}>
@@ -130,7 +130,7 @@ export const Dashboard = () => {
             </Grid> */}
           </Grid>
         </Box>
-      </Box>
+      {/* </Box> */}
     </>
   );
 };

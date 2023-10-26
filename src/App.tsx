@@ -1,5 +1,6 @@
 import { Dashboard } from "./components/Dashboard";
 import "./App.css";
+import './assets/main.scss'
 import { Home } from "./components/layout/Home";
 import { Routes, Route, Navigate } from "react-router";
 import { Leaves } from "./components/Leaves";
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
       <Routes>
+        {/* {isLoggedIn === null && <Route path="/login" element={<Login />} />} */}
         <Route path="/login" element={<Login />} />
       </Routes>
       <Home>

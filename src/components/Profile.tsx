@@ -61,7 +61,7 @@ export const Profile = () => {
 
   return (
     <>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      {/* <Box component="main" sx={{ flexGrow: 1, p: 3 }}> */}
         <div
           style={{
             display: "flex",
@@ -105,8 +105,7 @@ export const Profile = () => {
                     <DatePicker
                       label="Date of Birth"
                       value={dayjs(Date.now())}
-                        slotProps={{ textField: { size: 'small' } }}
-
+                      slotProps={{ textField: { size: "small" } }}
                     />
                   </LocalizationProvider>
                 </FormControl>
@@ -119,7 +118,6 @@ export const Profile = () => {
                     label="Phone Number"
                     value={"+91 6354886802"}
                     size="small"
-
                   />
                 </FormControl>
               </Grid>
@@ -137,8 +135,7 @@ export const Profile = () => {
                       label="Date of Joining"
                       value={dayjs(Date.now())}
                       disabled
-                        slotProps={{ textField: { size: 'small' } }}
-
+                      slotProps={{ textField: { size: "small" } }}
                     />
                   </LocalizationProvider>
                 </FormControl>
@@ -249,7 +246,7 @@ export const Profile = () => {
                 </FormControl>
               </Grid>
             </Grid>
-            <Stack sx={{ display: "flex", flexDirection: "row-reverse" }}>
+            <Stack direction="row" justifyContent="flex-end">
               <Button
                 variant="contained"
                 size="small"
@@ -263,7 +260,7 @@ export const Profile = () => {
             </Stack>
           </form>
         </CustomTabPanel>
-      </Box>
+      {/* </Box> */}
     </>
   );
 };
