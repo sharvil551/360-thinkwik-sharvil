@@ -15,7 +15,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuToggle }) => {
   const navigate = useNavigate();
   const isLoggedIn = localStorage.getItem("loggedIn");
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    // <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{ background: "rgb(95, 158, 160)" }}>
         <Toolbar>
           {isLoggedIn !== null && (
@@ -65,7 +65,7 @@ const Navbar: React.FC<NavbarProps> = ({ onMenuToggle }) => {
           )}
         </Toolbar>
       </AppBar>
-    </Box>
+    // </Box>
   );
 };
 

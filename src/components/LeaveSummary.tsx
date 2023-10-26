@@ -48,163 +48,165 @@ const leavesSection = [
 export const LeaveSummary = () => {
   return (
     <>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <div style={{ paddingBottom: "20px" }}>
-          <Typography variant="h5">Leave Summary</Typography>
+      {/* <Box component="main" sx={{ flexGrow: 1, p: 3 }}> */}
+
+      <div style={{ paddingBottom: "20px" }}>
+        <Typography variant="h5">Leave Summary</Typography>
+      </div>
+
+      <Stack direction="row">
+        <div>
+          <FormControl fullWidth>
+            <TextField
+              sx={{ width: "300px" }}
+              placeholder="Search Employee"
+              variant="outlined"
+              size="small"
+            />
+          </FormControl>
+
+          <List
+            sx={{
+              marginTop: "16px",
+              maxHeight: "70vh",
+              minHeight: "70vh",
+              backgroundColor: "rgb(255, 255, 255)",
+            }}
+          >
+            <ListItemButton selected={true}>
+              <ListItemIcon>
+                <Avatar alt="Sharvil Patel">S</Avatar>
+              </ListItemIcon>
+              <ListItemText >
+                <span>
+                  <Typography variant="body2">
+                    Sharvil Patel <br />
+                    TW066
+                  </Typography>
+                </span>
+              </ListItemText>
+            </ListItemButton>
+          </List>
         </div>
-        <Stack direction="row">
-          <div>
-            <FormControl fullWidth>
-              <TextField
-                sx={{ width: "300px" }}
-                placeholder="Search Employee"
-                variant="outlined"
-                size="small"
-              />
-            </FormControl>
 
-            <List
-              sx={{
-                marginTop: "16px",
-                maxHeight: "75vh",
-                minHeight: "75vh",
-                backgroundColor: "rgb(241 238 238 / 44%)",
-              }}
-            >
-              <ListItemButton selected={true}>
-                <ListItemIcon>
-                  <Avatar alt="Sharvil Patel">S</Avatar>
-                </ListItemIcon>
-                <ListItemText>
-                  <span>
-                    <Typography variant="body2">
-                      Sharvil Patel <br />
-                      TW066
-                    </Typography>
-                  </span>
-                </ListItemText>
-              </ListItemButton>
-            </List>
-          </div>
-
-          <div style={{ width: "100%" }}>
+        <div style={{ width: "100%" }}>
+          <Stack
+            direction="column"
+            spacing={{ xs: 1, sm: 2, md: 4 }}
+            sx={{ justifyContent: "space-between" }}
+            mx={2}
+          >
             <Stack
-              direction="column"
-              spacing={{ xs: 1, sm: 2, md: 4 }}
-              sx={{ justifyContent: "space-between" }}
-              mx={2}
+              direction="row"
+              sx={{ justifyContent: "space-between", alignItems: "center" }}
             >
-              <Stack direction="row" sx={{ justifyContent: "space-between",alignItems:'center' }}>
-                <Typography variant="h5" >Sharvil Patel (TW066)</Typography>
+              <Typography variant="h5">Sharvil Patel (TW066)</Typography>
 
-                <Stack direction="row" spacing={2} mx={2}>
-                  <div style={{ width: "150px", maxWidth: "100%" }}>
-                    <FormControl fullWidth>
-                      <InputLabel id="demo-simple-select-label">
-                        Year
-                      </InputLabel>
-                      <Select
-                        labelId="demo-simple-select-label"
-                        defaultValue="2023"
-                        label="Year"
-                        size="small"
-                      >
-                        <MenuItem value="2023">2023</MenuItem>
-                      </Select>
-                    </FormControl>
-                  </div>
+              <Stack direction="row" spacing={2} mx={2}>
+                <div style={{ width: "150px", maxWidth: "100%" }}>
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">Year</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      defaultValue="2023"
+                      label="Year"
+                      size="small"
+                    >
+                      <MenuItem value="2023">2023</MenuItem>
+                    </Select>
+                  </FormControl>
+                </div>
 
-                  <div
-                    style={{
-                      width: "150px",
-                      maxWidth: "100%",
-                    }}
-                  >
-                    <FormControl fullWidth>
-                      <InputLabel id="demo-simple-select-label">
-                        Month
-                      </InputLabel>
-                      <Select
-                        labelId="demo-simple-select-label"
-                        defaultValue="October"
-                        label="Month"
-                        size="small"
-                      >
-                        <MenuItem value="January">January</MenuItem>
-                        <MenuItem value="February">February</MenuItem>
-                        <MenuItem value="March">March</MenuItem>
-                        <MenuItem value="April">April</MenuItem>
-                        <MenuItem value="May">May</MenuItem>
-                        <MenuItem value="June">June</MenuItem>
-                        <MenuItem value="July">July</MenuItem>
-                        <MenuItem value="August">August</MenuItem>
-                        <MenuItem value="September">September</MenuItem>
-                        <MenuItem value="October">October</MenuItem>
-                        <MenuItem value="November">November</MenuItem>
-                        <MenuItem value="December">December</MenuItem>
-                      </Select>
-                    </FormControl>
-                  </div>
+                <div
+                  style={{
+                    width: "150px",
+                    maxWidth: "100%",
+                  }}
+                >
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">Month</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      defaultValue="October"
+                      label="Month"
+                      size="small"
+                    >
+                      <MenuItem value="January">January</MenuItem>
+                      <MenuItem value="February">February</MenuItem>
+                      <MenuItem value="March">March</MenuItem>
+                      <MenuItem value="April">April</MenuItem>
+                      <MenuItem value="May">May</MenuItem>
+                      <MenuItem value="June">June</MenuItem>
+                      <MenuItem value="July">July</MenuItem>
+                      <MenuItem value="August">August</MenuItem>
+                      <MenuItem value="September">September</MenuItem>
+                      <MenuItem value="October">October</MenuItem>
+                      <MenuItem value="November">November</MenuItem>
+                      <MenuItem value="December">December</MenuItem>
+                    </Select>
+                  </FormControl>
+                </div>
 
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Chip label="Current Month" variant="outlined" />
-                  </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Chip label="Current Month" variant="outlined" />
+                </div>
 
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Chip label="Previous Month" variant="outlined" />
-                  </div>
-                </Stack>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Chip label="Previous Month" variant="outlined" />
+                </div>
               </Stack>
-
-              {/* <Box> */}
-                <Grid container spacing={2} sx={{margin:'0 !important'}}>
-                  {leavesSection.map((p, index) => {
-                    return (
-                      <>
-                        <Grid item xs={3} key={index}>
-                          <Paper
-                            square={false}
-                            elevation={1}
-                            sx={{
-                              padding: "16px",
-                              background: p.backgroundColor,
-                            }}
-                          >
-                            <Typography variant="h6">{p.type}</Typography>
-                            <Typography variant="body1" mt={1}>
-                              Used: {p.used}
-                            </Typography>
-                            <Typography variant="body1">
-                              Available: {p.available}
-                            </Typography>
-                          </Paper>
-                        </Grid>
-                      </>
-                    );
-                  })}
-                </Grid>
-              {/* </Box> */}
-
-              <Typography variant="h6" mt={4} mb={2}>
-                Leaves taken
-              </Typography>
-              <TableComponent />
             </Stack>
-          </div>
-        </Stack>
-      </Box>
+
+            {/* <Box> */}
+            <Grid container spacing={2} sx={{ margin: "0 !important" }}>
+              {leavesSection.map((p, index) => {
+                return (
+                  <>
+                    <Grid item xs={3} key={index}>
+                      <Paper
+                        square={false}
+                        elevation={1}
+                        sx={{
+                          padding: "16px",
+                          background: p.backgroundColor,
+                        }}
+                      >
+                        <Typography variant="h6">{p.type}</Typography>
+                        <Typography variant="body1" mt={1}>
+                          Used: {p.used}
+                        </Typography>
+                        <Typography variant="body1">
+                          Available: {p.available}
+                        </Typography>
+                      </Paper>
+                    </Grid>
+                  </>
+                );
+              })}
+            </Grid>
+            {/* </Box> */}
+
+            <Typography variant="h6" mt={4} mb={2}>
+              Leaves taken
+            </Typography>
+            <TableComponent />
+          </Stack>
+        </div>
+      </Stack>
+
+      {/* </Box> */}
     </>
   );
 };
