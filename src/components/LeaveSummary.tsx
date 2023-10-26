@@ -16,6 +16,7 @@ import {
 } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import TableComponent from "./TableComponent";
+import { useState } from "react";
 
 const leavesSection = [
   {
@@ -45,6 +46,13 @@ const leavesSection = [
 ];
 
 export const LeaveSummary = () => {
+  const [searchInput, setSearchInput] = useState<string>("");
+
+  const employees = [{ name: "Sharvil Patel", employeeId: "TW066" }];
+
+  const filteredEmployees = employees.filter((employee) => {
+    return employee.name.toLowerCase().includes(searchInput.toLowerCase());
+  });
   return (
     <>
       {/* <Box component="main" sx={{ flexGrow: 1, p: 3 }}> */}
@@ -61,6 +69,8 @@ export const LeaveSummary = () => {
               placeholder="Search Employee"
               variant="outlined"
               size="small"
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
             />
           </FormControl>
 
@@ -72,11 +82,11 @@ export const LeaveSummary = () => {
               backgroundColor: "rgb(255, 255, 255)",
             }}
           >
-            <ListItemButton selected={true}>
+            {/* <ListItemButton selected={true}>
               <ListItemIcon>
                 <Avatar alt="Sharvil Patel">S</Avatar>
               </ListItemIcon>
-              <ListItemText >
+              <ListItemText>
                 <span>
                   <Typography variant="body2">
                     Sharvil Patel <br />
@@ -84,7 +94,23 @@ export const LeaveSummary = () => {
                   </Typography>
                 </span>
               </ListItemText>
-            </ListItemButton>
+            </ListItemButton> */}
+
+            {filteredEmployees.map((employee, index) => (
+              <ListItemButton key={index} selected={true}>
+                <ListItemIcon>
+                  <Avatar alt={employee.name}>{employee.name[0]}</Avatar>
+                </ListItemIcon>
+                <ListItemText>
+                  <span>
+                    <Typography variant="body2">
+                      {employee.name} <br />
+                      {employee.employeeId}
+                    </Typography>
+                  </span>
+                </ListItemText>
+              </ListItemButton>
+            ))}
           </List>
         </div>
 
