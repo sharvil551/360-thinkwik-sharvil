@@ -51,7 +51,7 @@ export const Home = ({ children }: HomeProps): JSX.Element => {
           flexGrow: 1,
           p: 2,
           marginLeft: isSidebarOpen ? '10px' : "0px",
-          transition: isSidebarOpen?"margin 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms ": "margin 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms"
+           transition: isSidebarOpen?"margin 190ms cubic-bezier(0.4, 0, 0.6, 1) 0ms ": "margin 120ms cubic-bezier(0.4, 0, 0.6, 1) 0ms"
           }}
         >
           <div

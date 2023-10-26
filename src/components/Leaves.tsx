@@ -1,6 +1,7 @@
 import { Button, Stack, Tab, Tabs, Typography } from "@mui/material";
 import TableComponent from "./TableComponent";
 import React from "react";
+import { useNavigate } from "react-router";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -32,6 +33,7 @@ function a11yProps(index: number) {
 }
 
 export const Leaves = () => {
+  const navigate = useNavigate()
   const [value, setValue] = React.useState<number>(0);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -65,6 +67,7 @@ export const Leaves = () => {
           <Button
             variant="contained"
             size="small"
+            onClick={()=>{navigate('/leaves/apply')}}
             sx={{
               mx: 2,
               backgroundColor: "rgb(95, 158, 160)",

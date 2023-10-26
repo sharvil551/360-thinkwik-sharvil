@@ -8,6 +8,7 @@ import { LeaveSummary } from "./components/LeaveSummary";
 import { Profile } from "./components/Profile";
 import { Login } from "./components/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { ApplyLeave } from "./components/ApplyLeave";
 const isLoggedIn = localStorage.getItem("loggedIn");
 
 function App() {
@@ -35,6 +36,10 @@ function App() {
           <Route
             path="/leaves"
             element={<ProtectedRoute element={<Leaves />} />}
+          />
+          <Route
+            path="/leaves/apply"
+            element={<ProtectedRoute element={<ApplyLeave />} />}
           />
           <Route
             path="/leave-summary"

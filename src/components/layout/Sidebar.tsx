@@ -12,7 +12,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { ListItem, Typography } from "@mui/material";
+import {  ListItem, Typography } from "@mui/material";
 
 interface SidebarProps {
   open: boolean;
@@ -142,7 +142,7 @@ const Sidebar: React.FC<SidebarProps> = ({ open, sideBarWidth }) => {
                   mr: open ? 3 : "auto",
                   justifyContent: "center",
                   color:
-                    location.pathname === "/leaves"
+                   ( location.pathname === "/leaves"||location.pathname === "/leaves/apply")
                       ? "rgb(95, 158, 160)"
                       : "none",
                 }}
@@ -154,7 +154,7 @@ const Sidebar: React.FC<SidebarProps> = ({ open, sideBarWidth }) => {
                 sx={{
                   opacity: open ? 1 : 0,
                   color:
-                    location.pathname === "/leaves"
+                   ( location.pathname === "/leaves"||location.pathname === "/leaves/apply")
                       ? "rgb(95, 158, 160)"
                       : "none",
                 }}
@@ -257,8 +257,7 @@ const Sidebar: React.FC<SidebarProps> = ({ open, sideBarWidth }) => {
               }}
               onClick={() => {
                 localStorage.removeItem("loggedIn");
-
-                navigate("/login");
+                navigate("/");
               }}
             >
               <ListItemIcon
