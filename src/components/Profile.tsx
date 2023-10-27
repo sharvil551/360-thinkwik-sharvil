@@ -16,9 +16,10 @@ import {
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import dayjs from "dayjs";
 import { MuiTelInput } from "mui-tel-input";
+import Loader from "./Loader";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -54,10 +55,25 @@ function a11yProps(index: number) {
 }
 
 export const Profile = () => {
-  const [value, setValue] = React.useState<number>(0);
+  const [value, setValue] = useState<number>(0);
+  const [loading, setLoading] = useState<boolean>(true);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+  }, []);
+
+  if (loading) {
+    return (
+      <>
+        <Loader />
+      </>
+    );
+  }
 
   return (
     <>
@@ -101,7 +117,7 @@ export const Profile = () => {
 
           <Grid container spacing={2} mt={0}>
             <Grid item sm={3}>
-              <FormControl fullWidth >
+              <FormControl fullWidth>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <DatePicker
                     label="Date of Birth"
@@ -129,7 +145,7 @@ export const Profile = () => {
           <Typography variant="h6" mt={2}>
             Employment Details
           </Typography>
-          
+
           <Grid container spacing={2} mt={0}>
             <Grid item sm={3}>
               <FormControl fullWidth>

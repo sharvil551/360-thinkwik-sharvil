@@ -15,7 +15,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useNavigate } from "react-router";
 import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
@@ -23,6 +23,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
 import { styled } from "@mui/material/styles";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import Loader from "./Loader";
 
 const VisuallyHiddenInput = styled("input")({
   clip: "rect(0 0 0 0)",
@@ -38,6 +39,21 @@ const VisuallyHiddenInput = styled("input")({
 
 export const ApplyLeave = () => {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
+
+  if (loading) {
+    return (
+      <>
+        <Loader />
+      </>
+    );
+  }
 
   return (
     <>
@@ -59,7 +75,9 @@ export const ApplyLeave = () => {
             Back
           </Button>
 
-          <Typography variant="h5" mx={2}>Apply for leave</Typography>
+          <Typography variant="h5" mx={2}>
+            Apply for leave
+          </Typography>
         </Stack>
 
         <Grid container spacing={2} mt={2} mx={0}>

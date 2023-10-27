@@ -17,7 +17,8 @@ import {
 } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import TableComponent from "./TableComponent";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Loader from "./Loader";
 
 const leavesSection = [
   {
@@ -48,12 +49,28 @@ const leavesSection = [
 
 export const LeaveSummary = () => {
   const [searchInput, setSearchInput] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(true);
 
   const employees = [{ name: "Sharvil Patel", employeeId: "TW066" }];
 
   const filteredEmployees = employees.filter((employee) => {
     return employee.name.toLowerCase().includes(searchInput.toLowerCase());
   });
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+  }, []);
+
+  if (loading) {
+    return (
+      <>
+        <Loader />
+      </>
+    );
+  }
+
   return (
     <>
       {/* <Box component="main" sx={{ flexGrow: 1, p: 3 }}> */}
