@@ -7,7 +7,11 @@ import {
   Radio,
   RadioGroup,
   Stack,
- 
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
   TextField,
   Typography,
 } from "@mui/material";
@@ -55,10 +59,10 @@ export const ApplyLeave = () => {
             Back
           </Button>
 
-          <Typography variant="h5">Apply for leave</Typography>
+          <Typography variant="h5" mx={2}>Apply for leave</Typography>
         </Stack>
 
-        <Grid container spacing={2} mt={2}>
+        <Grid container spacing={2} mt={2} mx={0}>
           <Grid item pt={2} px={2}>
             <FormControl>
               <FormLabel>Leave Type</FormLabel>
@@ -87,6 +91,7 @@ export const ApplyLeave = () => {
               </RadioGroup>
             </FormControl>
           </Grid>
+
           <div style={{ width: "100%" }}></div>
           <Grid item pt={2} px={2}>
             <FormControl fullWidth size="small">
@@ -96,6 +101,7 @@ export const ApplyLeave = () => {
                   value={dayjs(Date.now())}
                   slotProps={{ textField: { size: "small" } }}
                   format="DD-MMM-YYYY"
+                  disablePast
                 />
               </LocalizationProvider>
             </FormControl>
@@ -112,9 +118,10 @@ export const ApplyLeave = () => {
               </LocalizationProvider>
             </FormControl>
           </Grid>
+
           <div style={{ width: "100%" }}></div>
-          <Grid item xs={6} md={8}>
-            <table
+          <Grid item xs={6} md={7}>
+            {/* <table
               style={{
                 border: "1px solid black",
                 borderCollapse: "collapse",
@@ -214,8 +221,97 @@ export const ApplyLeave = () => {
                   </td>
                 </tr>
               </tbody>
-            </table>
+            </table> */}
+            <Table stickyHeader size="small" sx={{ border: 1 }}>
+              <TableHead>
+                <TableRow sx={{ border: 1 }}>
+                  <TableCell
+                    align="center"
+                    sx={{
+                      border: 1,
+                      fontWeight: "bold",
+                      backgroundColor: "transparent",
+                    }}
+                  >
+                    Date (Day)
+                  </TableCell>
+                  <TableCell
+                    align="center"
+                    sx={{
+                      border: 1,
+                      fontWeight: "bold",
+                      backgroundColor: "transparent",
+                    }}
+                  >
+                    Applying for
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                <TableRow>
+                  <TableCell
+                    component="th"
+                    scope="row"
+                    align="center"
+                    sx={{ border: 1 }}
+                  >
+                    27-Oct-2023 (Friday)
+                  </TableCell>
+                  <TableCell
+                    component="th"
+                    scope="row"
+                    align="center"
+                    sx={{ border: 1 }}
+                  >
+                    <FormControl>
+                      <RadioGroup
+                        row
+                        aria-labelledby="demo-row-radio-buttons-group-label"
+                        name="row-radio-buttons-group"
+                        defaultValue="fullDay"
+                      >
+                        <FormControlLabel
+                          value="fullDay"
+                          control={<Radio />}
+                          label="Full Day"
+                        />
+                        <FormControlLabel
+                          value="firstHalf"
+                          control={<Radio />}
+                          label="First Half"
+                        />
+                        <FormControlLabel
+                          value="secondHalf"
+                          control={<Radio />}
+                          label="Second Half"
+                        />
+                      </RadioGroup>
+                    </FormControl>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell
+                    component="th"
+                    scope="row"
+                    align="center"
+                    sx={{ border: 1, fontWeight: "bold" }}
+                  >
+                    Total Days
+                  </TableCell>
+
+                  <TableCell
+                    component="th"
+                    scope="row"
+                    align="center"
+                    sx={{ border: 1, fontWeight: "bold" }}
+                  >
+                    1 day(s)
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
           </Grid>
+
           <div style={{ width: "100%" }}></div>
           <Grid item>
             <Typography variant="body1">
@@ -227,6 +323,7 @@ export const ApplyLeave = () => {
               </strong>
             </Typography>
           </Grid>
+
           <div style={{ width: "100%" }}></div>
           <Grid item>
             <Stack>
@@ -246,6 +343,7 @@ export const ApplyLeave = () => {
               </Button>
             </Stack>
           </Grid>
+
           <div style={{ width: "100%" }}></div>
           <Grid item xs={2} md={6}>
             <FormControl fullWidth>
@@ -258,8 +356,9 @@ export const ApplyLeave = () => {
               />
             </FormControl>
           </Grid>
+
           <div style={{ width: "100%" }}></div>
-          <Grid item md={6}>
+          <Grid item xs={2} md={6}>
             <Stack flexDirection="row" justifyContent="flex-end">
               <Button
                 variant="outlined"
@@ -269,7 +368,7 @@ export const ApplyLeave = () => {
                   borderColor: "rgb(95, 158, 160)",
                   "&:hover": { borderColor: "rgb(95, 158, 160)" },
                 }}
-                 onClick={() => {
+                onClick={() => {
                   navigate("/leaves");
                 }}
               >
@@ -278,7 +377,6 @@ export const ApplyLeave = () => {
               <Button
                 variant="contained"
                 size="small"
-               
                 sx={{
                   mx: 2,
                   backgroundColor: "rgb(95, 158, 160)",

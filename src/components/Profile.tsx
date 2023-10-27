@@ -98,9 +98,10 @@ export const Profile = () => {
         <form noValidate>
           {/* Basic Details */}
           <Typography variant="h6">Basic Details</Typography>
+
           <Grid container spacing={2} mt={0}>
-            <Grid item sm={3.5}>
-              <FormControl fullWidth size="small">
+            <Grid item sm={3}>
+              <FormControl fullWidth >
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <DatePicker
                     label="Date of Birth"
@@ -112,7 +113,7 @@ export const Profile = () => {
               </FormControl>
             </Grid>
 
-            <Grid item sm={3.5}>
+            <Grid item sm={3}>
               <FormControl fullWidth>
                 <MuiTelInput
                   defaultCountry="IN"
@@ -128,8 +129,9 @@ export const Profile = () => {
           <Typography variant="h6" mt={2}>
             Employment Details
           </Typography>
+          
           <Grid container spacing={2} mt={0}>
-            <Grid item sm={3.5}>
+            <Grid item sm={3}>
               <FormControl fullWidth>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <DatePicker
@@ -143,7 +145,7 @@ export const Profile = () => {
               </FormControl>
             </Grid>
 
-            <Grid item sm={3.5}>
+            <Grid item sm={3}>
               <FormControl fullWidth>
                 <TextField
                   label="Employee ID"
@@ -154,8 +156,9 @@ export const Profile = () => {
               </FormControl>
             </Grid>
           </Grid>
+
           <Grid container spacing={2} mt={0}>
-            <Grid item sm={3.5}>
+            <Grid item sm={3}>
               <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">
                   Department
@@ -172,7 +175,7 @@ export const Profile = () => {
               </FormControl>
             </Grid>
 
-            <Grid item sm={3.5}>
+            <Grid item sm={3}>
               <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">
                   Designation
@@ -191,7 +194,7 @@ export const Profile = () => {
               </FormControl>
             </Grid>
 
-            <Grid item sm={3.5}>
+            <Grid item sm={3}>
               <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">
                   Reporting Manager
@@ -214,7 +217,7 @@ export const Profile = () => {
             Access Details
           </Typography>
           <Grid container spacing={2} mt={0}>
-            <Grid item sm={3.5}>
+            <Grid item sm={3}>
               <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">
                   Employee Status
@@ -231,7 +234,7 @@ export const Profile = () => {
               </FormControl>
             </Grid>
 
-            <Grid item sm={3.5}>
+            <Grid item sm={3}>
               <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">
                   Employee Role
@@ -248,7 +251,7 @@ export const Profile = () => {
               </FormControl>
             </Grid>
           </Grid>
-          <Stack direction="row" justifyContent="flex-end">
+          <Stack direction="row" justifyContent="flex-end" mt={3}>
             <Button
               variant="contained"
               size="small"

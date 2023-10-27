@@ -48,10 +48,12 @@ export const Home = ({ children }: HomeProps): JSX.Element => {
         <Box
           component="main"
           sx={{
-          flexGrow: 1,
-          p: 2,
-          marginLeft: isSidebarOpen ? '10px' : "0px",
-           transition: isSidebarOpen?"margin 190ms cubic-bezier(0.4, 0, 0.6, 1) 0ms ": "margin 120ms cubic-bezier(0.4, 0, 0.6, 1) 0ms"
+            flexGrow: 1,
+            p: 2,
+            marginLeft: isSidebarOpen ? "20px" : "5px",
+            transition: "margin-left 200ms cubic-bezier(0.4, 0, 0.6, 1)",
+            // marginLeft: isSidebarOpen ? '10px' : "0px",
+            //  transition: isSidebarOpen?"margin-left 200ms cubic-bezier(0.4, 0, 0.6, 1) 10ms ": "margin 200ms cubic-bezier(0.4, 0, 0.6, 1) 10ms"
           }}
         >
           <div

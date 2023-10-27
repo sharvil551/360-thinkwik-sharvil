@@ -1,5 +1,6 @@
 import {
   Avatar,
+  Box,
   Chip,
   FormControl,
   Grid,
@@ -117,7 +118,7 @@ export const LeaveSummary = () => {
         <div style={{ width: "100%" }}>
           <Stack
             direction="column"
-            spacing={{ xs: 1, sm: 2, md: 4 }}
+            spacing={{ xs: 1, sm: 2 }}
             sx={{ justifyContent: "space-between" }}
             mx={2}
           >
@@ -194,34 +195,34 @@ export const LeaveSummary = () => {
               </Stack>
             </Stack>
 
-            {/* <Box> */}
-            <Grid container spacing={2} sx={{ margin: "0 !important" }}>
-              {leavesSection.map((p, index) => {
-                return (
-                  <>
-                    <Grid item xs={3} key={index}>
-                      <Paper
-                        square={false}
-                        elevation={1}
-                        sx={{
-                          padding: "16px",
-                          background: p.backgroundColor,
-                        }}
-                      >
-                        <Typography variant="h6">{p.type}</Typography>
-                        <Typography variant="body1" mt={1}>
-                          Used: {p.used}
-                        </Typography>
-                        <Typography variant="body1">
-                          Available: {p.available}
-                        </Typography>
-                      </Paper>
-                    </Grid>
-                  </>
-                );
-              })}
-            </Grid>
-            {/* </Box> */}
+            <Box component="div">
+              <Grid container spacing={2}>
+                {leavesSection.map((p, index) => {
+                  return (
+                    <>
+                      <Grid item xs={3} key={index}>
+                        <Paper
+                          square={false}
+                          elevation={1}
+                          sx={{
+                            padding: "16px",
+                            background: p.backgroundColor,
+                          }}
+                        >
+                          <Typography variant="h6">{p.type}</Typography>
+                          <Typography variant="body1" mt={1}>
+                            Used: {p.used}
+                          </Typography>
+                          <Typography variant="body1">
+                            Available: {p.available}
+                          </Typography>
+                        </Paper>
+                      </Grid>
+                    </>
+                  );
+                })}
+              </Grid>
+            </Box>
 
             <Typography variant="h6" mt={4} mb={2}>
               Leaves taken
